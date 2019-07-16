@@ -1,0 +1,9 @@
+C:\Users\Tej\Desktop\HMS\index_files\buttonhot_bg.png
+C:\Users\Tej\Desktop\HMS\index_files\menuitemhot_bg.png
+C:\Users\Tej\Desktop\HMS\index_files\ebab_mbmcp.gif
+C:\Users\Tej\Desktop\HMS\index_files\ebab_mbmcp_d.gif
+C:\Users\Tej\Desktop\HMS\index_files\ebab_mbmcp_c.gif
+C:\Users\Tej\Desktop\HMS\index_files\mbjsmbmcp.js
+C:\Users\Tej\Desktop\HMS\index_files\mbcsmbmcp.css
+C:\Users\Tej\Desktop\HMS\index.htm
+C:\Users\Tej\Desktop\HMS\index_files\filelist_0g7y.txt

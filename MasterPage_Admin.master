@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Admin.master.cs" Inherits="MasterPage_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="admin_files/mbcsmbmcp.css" type="text/css" />
+    <style>
+        div.parent
+        {
+            width:1210px;
+            height:10in;
+            background-color:lightgray;
+        }
+        div.top
+        {
+            width:1210px;
+            font-family: 'Questrial', Verdana, sans-serif;
+            height:1.5in;
+            background-color:#006666;
+            text-align:left;
+        }
+        div.middle
+        {
+            width:1210px;
+            height:8in;
+            background-color:rgb(210,210,210);
+            margin-top:-20px;
+        }
+        h1
+        {
+           color:#a7e8f8;
+           font-family:'julius sans one',sans-serif;
+           line-height:42px;
+           text-shadow:1px 1px 1px #082B34;
+           font-size:35px;
+           margin:0 0 20px;
+           padding-top:18px;
+           text-align:justify;
+           text-transform:capitalize;
+           text-shadow:1px 1px 1px #082b34;
+           font-weight:bold;
+        }
+        div.link
+        {
+            width:1210px;
+            height:.37in;
+            background-color:#006666;
+        }
+        body
+        {
+            margin:0px;
+            padding:0px;   
+            background-color:grey;
+            background-image:url(Images\\eight_horns.png);
+            background-attachment:fixed;
+        }
+        div.bottom
+        {
+            width:1210px;
+            height:.8in;
+            background-color:gray;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <center>
+  <div class="parent">
+      <div class="top">
+          <h1>Hospital Administration</h1>
+          <br />
+          <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu" style="width: 654px; height: 45px;">
+  <li class="topitem spaced_li"><div class="buttonbg" style="width: 89px;"><a href="AdminHome.aspx">Home</a></div></li>
+  <li class="topitem spaced_li"><div class="arrow buttonbg" style="width: 120px;"><a class="button_2">Employees</a></div>
+  <ul class="gradient_menu gradient84">
+  <li><a class="with_arrow" title="">Doctor</a>
+    <ul class="gradient_menu gradient56">
+    <li><a title="Doctor Registration" href="frmDoctorRegistration.aspx">Add a doctor</a></li>
+    <li><a title="">Doctor Details</a></li>
+    </ul></li>
+  <li><a title="">Nurses</a></li>
+  <li><a title="">Others</a></li>
+  </ul></li>
+  <li class="topitem spaced_li"><div class="arrow buttonbg" style="width: 100px;"><a class="button_3">Patient<br /><br /></a></div>
+  <ul class="gradient_menu gradient84">
+  <li><a title="">Patient Details</a></li>
+  <li><a title="">Payment Details</a></li>
+  <li><a title="">View</a></li>
+  </ul></li>
+  <li class="topitem spaced_li"><div class="buttonbg" style="width: 80px;"><a>Wards</a></div>
+  <ul class="gradient_menu gradient84">
+  <li><a title="">InPatient Department</a></li>
+  <li><a title="">OutPatient Department</a></li>
+  </ul></li>
+  <li class="topitem spaced_li"><div class="buttonbg" style="width: 125px;"><a>Billing Wizard</a></div></li>
+  <li class="topitem"><div class="buttonbg"><a>Feedback Report</a></div></li>
+</ul>
+<script type="text/javascript" src="admin_files/mbjsmbmcp.js"></script>
+      </div>
+    <div class="middle">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+      <div class="bottom"></div>
+      </div>
+            </center>
+    </form>
+</body>
+</html>
+    

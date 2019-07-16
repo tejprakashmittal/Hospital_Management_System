@@ -1,0 +1,292 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_User.master.cs" Inherits="MasterPage_User" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome in HMS</title>
+    <link runat="server" rel="shortcut icon" href="~/Images/HMS.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/Images/HMS.ico" type="image/ico" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="index_files/mbcsmbmcp.css" type="text/css" />
+    <script>function textCounter(field, field2, maxlimit) {
+    var countfield = document.getElementById(field2); if (field.value.length >
+    maxlimit) {
+        field.value = field.value.substring(0, maxlimit); returnfalse;
+    }
+    else {
+        countfield.value = maxlimit - field.value.length;
+    }
+}</script>
+    <style>
+        #QSEARCH {
+              display: inline-block;
+              position: relative;
+              height: 50px;
+              float: right;
+              padding: 0;
+              margin-top:-15px;
+              position: relative;
+            }
+        /*@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+         @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);*/
+        .search1 {
+              height: 35px;
+              font-size: 25px;
+              display: inline-block;
+              font-family: "Lato";
+              font-weight: 100;
+              border: none;
+              outline: none;
+              color: #555;
+              padding: 3px;
+              padding-right: 60px;
+              width: 0px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              background: none;
+              z-index: 3;
+              transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+              cursor: pointer;
+            }
+
+            .search1:focus:hover {
+              border-bottom: 1px solid #BBB;
+            }
+
+            .search1:focus {
+              width:250px;
+              z-index: 1;
+              border-bottom: 1px solid #BBB;
+              cursor: text;
+            }
+            .search2 {
+              height: 67px;
+              width: 63px;
+              display: inline-block;
+              color:red;
+              float: right;
+              background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+              text-indent: -10000px;
+              border: none;
+              position: absolute;
+              top: 0;
+              right: 0;
+              z-index: 2;
+              cursor: pointer;
+              opacity: 0.4;
+              cursor: pointer;
+              transition: opacity .4s ease;
+            }
+
+            input[type="submit"]:hover {
+              opacity: 0.8;
+            }
+        div.parent
+        {
+            width:1210px;
+            height:12in;
+            background-color:blue;
+        }
+        .btn { background: #4b8df9; display: inline-block; padding: 5px 10px 6px; color: #fbf7f7; text-decoration: none; font-weight: bold; line-height: 1; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0 1px 3px #999; -webkit-box-shadow: 0 1px 3px #999; box-shadow: 0 1px 3px #999; text-shadow: 0 -1px 1px #222; border: none; position: relative; cursor: pointer; font-size: 14px; font-family:Verdana, Geneva, sans-serif;}
+        .btn:hover{ background-color: #2a78f6; }
+        div.top
+        {
+            width:1210px;
+            font-family: 'Questrial', Verdana, sans-serif;
+            height:.8in;
+            background-color:white;
+        }
+        div.middle
+        {
+            width:1210px;
+            height:10.03in;
+            margin-top:-2px;
+            background-color:#eaeaea;
+        }
+        h1
+        {
+           color:#007EAE;
+           font-size:26px;
+           text-align:justify;
+           text-transform:capitalize;
+           text-shadow:-1px 1px 3px black;
+           font-weight:normal;
+           font-family:'Julius Sans One';
+        }
+        h2
+        {
+            font-size:40px;
+            font-style:normal;
+            /*font-family:'SigvarSerial',sans-serif;*/
+            font-family:'Great Vibes';
+            color:#9853a2;
+        }
+         .tb1
+        {
+            width:240px;
+            color:#747862;
+            height:30px;
+            border:1px solid #cccccc;
+            border-radius:1px;
+            padding-left:8px;
+        }
+        .linkbutton
+        {
+            color:#11b0ca;
+            font-family:Arial;
+            font-size:14px;
+            font-weight:bold;
+            /*text-shadow:0-1px 0 rgba(0,0,0,0.4);*/
+        }
+        div.link
+        {
+            width:1210px;
+            height:.37in;
+            background-color:white;
+        }
+        body
+        {
+            margin:0px;
+            padding:0px;   
+            background-color:grey;
+            background-image:url(Images\\eight_horns.png);
+            background-attachment:fixed;
+        }
+        div.bottom
+        {
+            width:1210px;
+            height:.8in;
+            background-color:#303030;
+            text-align:center;
+            text-decoration-color:black;
+            font-weight:normal;
+        }
+        .watermarked
+        {
+            height:30px;
+            width:240px;
+            border:1px solid #BEBEBE;
+            background-color:#F0F8FF;
+            color:gray;
+        }
+        #ajaxloader
+        {
+            position:absolute;
+            width:30px;
+            height:30px;
+            border:8px solid #fff;
+            border-right-color:transparent;
+            border-radius:50%;
+            box-shadow:0 0 25px 2px #eee;
+        }
+        #ajaxloader
+        {
+            animation:spin 1s linear infinite;
+        }
+        @keyframes spin
+        {
+            from {transform:rotate(0deg);opacity:0.2;}
+            50% {transform:rotate(180deg);opacity:1.0;}
+            to {transform:rotate(360deg);opacity:0.2;}
+            
+        }
+        .radiobutton
+        {
+            content:"\2022";
+            color:green;
+            padding:0 0 0 25px;
+            font-size:15px;
+            text-align:center;
+            line-height:18px;
+            font-family:sans-serif,'Free Agent';
+        }
+        .hyperlink
+        {
+            color:white;
+            text-transform:uppercase;
+            font-weight:normal;
+        }
+        .login{
+	            background: url(../images/lock.png) no-repeat 0;
+	            padding-left: 18px;
+	            transition: 0.5s ease;
+	            -webkit-transition: 0.5s ease;
+            }
+        .login:hover{
+	                background: url(../images/lock1.png) no-repeat 0;
+                }
+                .sign{
+	                background:url(../images/login.png) no-repeat 0;
+	                padding-left: 18px;
+	                transition: 0.5s ease;
+	                -webkit-transition: 0.5s ease;
+                }
+                .sign:hover{
+	                background:url(../images/login1.png) no-repeat 0;
+                }
+                .right-left{
+	                    float:right;
+                        margin-top:-90px;
+                        margin-right:4px;
+                    }
+                    .right-left ul li{
+	                    display:inline-block;
+                    }
+                    .right-left ul li a{
+	                    font-family: 'Open Sans', sans-serif;
+	                    color:#007DAD;
+	                    font-size:0.875em;
+	                    transition: 0.5s ease;
+	                    -o-transition: 0.5s ease;
+	                    -webkit-transition: 0.5s ease;
+                    }
+                    .right-left ul li a:hover{
+	                    color:#303030;
+                    }
+
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <center><div class="parent">
+            <div class="top"><br />
+                <h1>&nbsp;Hospital Management System</h1>
+            </div>
+            <div class="link" align="left">
+            <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu" style="width: 730px; height: 32px;">
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32"><a href="frmMain.aspx">Home</a></div></li>
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32"><div class="arrow"><a class="button_2">Patient</a></div></div>
+  <ul>
+  <li class="gradient_menuitem gradient27"><a title="">Registration Form</a></li>
+  <li class="gradient_menuitem gradient27"><a title="">Find Doctor</a></li>
+  <li class="gradient_menuitem gradient27 last_item"><a title="">Doctor Details</a></li>
+  </ul></li>
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32" style="width: 95px;"><a href="frmFacilities.aspx">Facilities</a></div></li>
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32" style="width: 95px;"><a href="frmSymptoms.aspx">Symptoms</a></div></li>
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32"><a href="frmFeedback.aspx">Feedback</a></div></li>
+  <li class="topitem spaced_li"><div class="buttonbg gradient_button gradient32"><a href="frmContact.aspx">Contact Us</a></div></li>
+  <li class="topitem"><div class="buttonbg gradient_button gradient32"><a>LogOut</a></div></li>
+</ul>
+<script type="text/javascript" src="index_files/mbjsmbmcp.js"></script>
+                <div class="right-left">
+							<ul>
+								<li class="login"><a href="#">Login</a></li>
+								<li class="sign"><a href="#">Sign up</a></li>
+							</ul>
+						</div>
+    <div class="middle">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+            <div class="bottom"><br /><br /><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="#" Font-Underline="false" CssClass="hyperlink">About Us</asp:HyperLink>&nbsp;|&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" Font-Underline="false" NavigateUrl="#" CssClass="hyperlink">Health Packeges</asp:HyperLink>&nbsp;|&nbsp;<asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="false" NavigateUrl="#" CssClass="hyperlink">Carrer</asp:HyperLink>&nbsp;|&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="false" CssClass="hyperlink" NavigateUrl="#">Patient Care</asp:HyperLink>&nbsp;|&nbsp;<asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="false" CssClass="hyperlink" NavigateUrl="#">Terms of use</asp:HyperLink></div>
+         </div></center>
+    </form>
+</body>
+</html>
